@@ -1,0 +1,11 @@
+services:
+  rag_app:
+    build: .
+    container_name: rag_document_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
+      GENERATOR_MODEL: google/flan-t5-base
